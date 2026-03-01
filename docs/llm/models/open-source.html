@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-llm/models/open-source" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">开源大模型全景 | AI Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/ai-doc/docs/llm/models/open-source"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="开源大模型全景 | AI Docs"><meta data-rh="true" name="description" content="除 Meta 的 LLaMA 系列外，开源 LLM 生态中还涌现出多个重要玩家。本文梳理当前主流开源模型的核心特点、技术创新与适用场景，并提供模型选型指南。"><meta data-rh="true" property="og:description" content="除 Meta 的 LLaMA 系列外，开源 LLM 生态中还涌现出多个重要玩家。本文梳理当前主流开源模型的核心特点、技术创新与适用场景，并提供模型选型指南。"><link data-rh="true" rel="icon" href="/ai-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/ai-doc/docs/llm/models/open-source"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/models/open-source" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/models/open-source" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开源大模型全景","item":"https://luuman.github.io/ai-doc/docs/llm/models/open-source"}]}</script><link rel="stylesheet" href="/ai-doc/assets/css/styles.cc5c71b5.css">
+<script src="/ai-doc/assets/js/runtime~main.5a96ce5f.js" defer="defer"></script>
+<script src="/ai-doc/assets/js/main.21a9e295.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/ai-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">AI</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/tauri-doc/docs" class="dropdownMenuItem_VBaP">Tauri</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/ai-doc/docs">Docs</a><a class="navLink_RnnM" href="/ai-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-doc/docs"><span title="知识库总览" class="linkLabel_WmDU">知识库总览</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="categoryLinkLabel_W154">AI 全景概述</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="linkLabel_WmDU">AI 全景概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/history"><span title="AI 发展里程碑" class="linkLabel_WmDU">AI 发展里程碑</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/paradigms"><span title="符号主义 vs 连接主义" class="linkLabel_WmDU">符号主义 vs 连接主义</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/agi"><span title="弱 AI、强 AI 与 AGI" class="linkLabel_WmDU">弱 AI、强 AI 与 AGI</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/fundamentals"><span title="基础理论" class="categoryLinkLabel_W154">基础理论</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）" class="categoryLinkLabel_W154">大语言模型（LLM）</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）概述" class="linkLabel_WmDU">大语言模型（LLM）概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="模型原理" class="categoryLinkLabel_W154">模型原理</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="自回归语言模型" class="linkLabel_WmDU">自回归语言模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/tokenization"><span title="Tokenization 与词汇表" class="linkLabel_WmDU">Tokenization 与词汇表</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/scaling-law"><span title="Scaling Law" class="linkLabel_WmDU">Scaling Law</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/attention"><span title="注意力机制详解" class="linkLabel_WmDU">注意力机制详解</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="主流模型" class="categoryLinkLabel_W154">主流模型</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="GPT 系列模型" class="linkLabel_WmDU">GPT 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/claude"><span title="Claude 系列模型" class="linkLabel_WmDU">Claude 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/gemini"><span title="Gemini 系列模型" class="linkLabel_WmDU">Gemini 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/llama"><span title="LLaMA 系列与 Meta AI" class="linkLabel_WmDU">LLaMA 系列与 Meta AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai-doc/docs/llm/models/open-source"><span title="开源大模型全景" class="linkLabel_WmDU">开源大模型全景</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="训练体系" class="categoryLinkLabel_W154">训练体系</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="大规模预训练" class="linkLabel_WmDU">大规模预训练</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/sft"><span title="监督微调（SFT）" class="linkLabel_WmDU">监督微调（SFT）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/rlhf"><span title="RLHF 与偏好优化" class="linkLabel_WmDU">RLHF 与偏好优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/lora"><span title="LoRA 与参数高效微调" class="linkLabel_WmDU">LoRA 与参数高效微调</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/alignment"><span title="模型对齐（Alignment）" class="linkLabel_WmDU">模型对齐（Alignment）</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/evaluation"><span title="LLM 评测体系" class="linkLabel_WmDU">LLM 评测体系</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/multimodal"><span title="多模态 AI" class="categoryLinkLabel_W154">多模态 AI</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/prompt-engineering"><span title="提示工程" class="categoryLinkLabel_W154">提示工程</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/development"><span title="AI 应用开发" class="categoryLinkLabel_W154">AI 应用开发</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development"><span title="AI 应用开发概述" class="linkLabel_WmDU">AI 应用开发概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="API 接入" class="categoryLinkLabel_W154">API 接入</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="Anthropic API 使用指南" class="linkLabel_WmDU">Anthropic API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/openai"><span title="OpenAI API 使用指南" class="linkLabel_WmDU">OpenAI API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/google-ai"><span title="Google AI API" class="linkLabel_WmDU">Google AI API</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="开发框架" class="categoryLinkLabel_W154">开发框架</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="LangChain 开发框架" class="linkLabel_WmDU">LangChain 开发框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/llamaindex"><span title="LlamaIndex 框架" class="linkLabel_WmDU">LlamaIndex 框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/dspy"><span title="DSPy 编程框架" class="linkLabel_WmDU">DSPy 编程框架</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/rag"><span title="RAG 检索增强" class="categoryLinkLabel_W154">RAG 检索增强</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag"><span title="检索增强生成（RAG）概述" class="linkLabel_WmDU">检索增强生成（RAG）概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/embeddings"><span title="Embedding 模型选型" class="linkLabel_WmDU">Embedding 模型选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/vector-db"><span title="向量数据库选型" class="linkLabel_WmDU">向量数据库选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/chunking"><span title="文档分块策略" class="linkLabel_WmDU">文档分块策略</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/retrieval"><span title="检索与重排优化" class="linkLabel_WmDU">检索与重排优化</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent" class="categoryLinkLabel_W154">AI Agent</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent 概述" class="linkLabel_WmDU">AI Agent 概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/tool-use"><span title="工具调用（Tool Use）" class="linkLabel_WmDU">工具调用（Tool Use）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/memory"><span title="Agent 记忆设计" class="linkLabel_WmDU">Agent 记忆设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/planning"><span title="Agent 规划与推理" class="linkLabel_WmDU">Agent 规划与推理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/multi-agent"><span title="多智能体系统" class="linkLabel_WmDU">多智能体系统</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/engineering"><span title="AI 工程架构" class="categoryLinkLabel_W154">AI 工程架构</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/tools"><span title="AI 工具生态" class="categoryLinkLabel_W154">AI 工具生态</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/product"><span title="AI 产品与商业" class="categoryLinkLabel_W154">AI 产品与商业</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/industry"><span title="行业应用" class="categoryLinkLabel_W154">行业应用</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/safety"><span title="安全与伦理" class="categoryLinkLabel_W154">安全与伦理</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/future"><span title="未来趋势" class="categoryLinkLabel_W154">未来趋势</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/ai-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">大语言模型（LLM）</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">主流模型</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">开源大模型全景</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>开源大模型全景</h1></header>
+<p>除 Meta 的 LLaMA 系列外，开源 LLM 生态中还涌现出多个重要玩家。本文梳理当前主流开源模型的核心特点、技术创新与适用场景，并提供模型选型指南。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistral-7b高密度小模型的标杆">Mistral 7B：高密度小模型的标杆<a href="#mistral-7b高密度小模型的标杆" class="hash-link" aria-label="Mistral 7B：高密度小模型的标杆的直接链接" title="Mistral 7B：高密度小模型的标杆的直接链接" translate="no">​</a></h2>
+<p><strong>Mistral AI</strong>（法国，2023 年成立）以&quot;用更小的模型做更多的事&quot;为核心理念。</p>
+<p><strong>Mistral 7B（2023 年 9 月）</strong>：</p>
+<ul>
+<li class="">7B 参数，但在多项基准上<strong>超越 LLaMA 2 13B</strong></li>
+<li class="">核心技术创新：
+<ul>
+<li class=""><strong>Sliding Window Attention（SWA）</strong>：每个 Token 只关注固定窗口内的位置（如最近 4096 个 Token），通过递归传递捕捉长程依赖，大幅降低注意力计算复杂度</li>
+<li class=""><strong>GQA（分组查询注意力）</strong>：减少 KV Cache 显存占用</li>
+</ul>
+</li>
+<li class="">Apache 2.0 完全开源（无商业限制）</li>
+<li class="">推理速度：小体积带来高吞吐量，适合批量推理</li>
+</ul>
+<p>Mistral 7B 的出现打破了&quot;性能随参数量线性增长&quot;的惯性认知，推动行业重视模型密度（单位参数的能力）而非单纯参数规模。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mixtral-8x7bmoe-架构的开源代表">Mixtral 8x7B：MoE 架构的开源代表<a href="#mixtral-8x7bmoe-架构的开源代表" class="hash-link" aria-label="Mixtral 8x7B：MoE 架构的开源代表的直接链接" title="Mixtral 8x7B：MoE 架构的开源代表的直接链接" translate="no">​</a></h2>
+<p><strong>Mixtral 8x7B（2023 年 12 月）</strong>：</p>
+<ul>
+<li class="">采用 <strong>Mixture of Experts（MoE，混合专家）</strong> 架构</li>
+<li class="">共有 8 个专家网络（Expert），每个 Token 推理时<strong>只激活 2 个专家</strong></li>
+<li class="">总参数 46.7B，但每个 Token 的实际计算量仅相当于 12.9B 模型</li>
+<li class="">性能超越 LLaMA 2 70B，接近 GPT-3.5</li>
+</ul>
+<p>MoE 架构的优势：</p>
+<ul>
+<li class=""><strong>计算效率高</strong>：总参数大（知识容量大），激活参数少（推理速度快）</li>
+<li class=""><strong>专业化分工</strong>：不同专家自发学习不同类型的知识/任务</li>
+<li class=""><strong>可扩展性强</strong>：理论上可添加更多专家而不成比例增加推理成本</li>
+</ul>
+<p>MoE 的挑战：</p>
+<ul>
+<li class="">显存需求按<strong>总参数量</strong>而非激活参数量，需加载全部专家权重</li>
+<li class="">负载均衡：防止某些专家过度使用，某些几乎未使用</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qwen25-系列阿里云的中文最强">Qwen2.5 系列：阿里云的中文最强<a href="#qwen25-系列阿里云的中文最强" class="hash-link" aria-label="Qwen2.5 系列：阿里云的中文最强的直接链接" title="Qwen2.5 系列：阿里云的中文最强的直接链接" translate="no">​</a></h2>
+<p><strong>Qwen</strong>（通义千问）是阿里云 AI 事业部开发的模型系列，在中文能力方面名列前茅。</p>
+<p><strong>Qwen2.5 系列（2024 年 9 月）</strong>：</p>
+<ul>
+<li class="">规模覆盖：0.5B、1.5B、3B、7B、14B、32B、72B</li>
+<li class=""><strong>词汇表</strong>：151,936 个 Token（包含大量中文高频词组）</li>
+<li class=""><strong>训练数据</strong>：超过 18T Token，其中大量中文高质量数据</li>
+<li class=""><strong>上下文窗口</strong>：128K Token</li>
+<li class="">在中文理解、中文创作、中文知识问答等任务上位居开源模型前列</li>
+</ul>
+<p>专项模型：</p>
+<ul>
+<li class=""><strong>Qwen2.5-Coder</strong>：代码专用，72B 版本在代码生成基准上接近 GPT-4o</li>
+<li class=""><strong>Qwen2.5-Math</strong>：数学专用，中英文数学推理能力突出</li>
+<li class=""><strong>Qwen-VL</strong>：视觉语言多模态版本</li>
+<li class=""><strong>Qwen-Audio</strong>：音频理解版本</li>
+</ul>
+<p>授权：多数版本采用 Apache 2.0 或 Qwen License（商业用途可申请）。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deepseek-r1v3国产顶级的成本革命">DeepSeek R1/V3：国产顶级的成本革命<a href="#deepseek-r1v3国产顶级的成本革命" class="hash-link" aria-label="DeepSeek R1/V3：国产顶级的成本革命的直接链接" title="DeepSeek R1/V3：国产顶级的成本革命的直接链接" translate="no">​</a></h2>
+<p><strong>DeepSeek</strong>（深度求索，杭州）是 2024 年最引人注目的中国 AI 公司，以超低训练成本取得顶尖效果震惊业界。</p>
+<p><strong>DeepSeek-V3（2024 年 12 月）</strong>：</p>
+<ul>
+<li class="">671B 总参数，MoE 架构，37B 激活参数</li>
+<li class="">训练成本约 <strong>557 万美元</strong>（使用约 2048 块 H800 GPU，约 278 万 H800 GPU 小时）</li>
+<li class="">相比 GPT-4 等同级模型，训练成本不足其 1/10</li>
+<li class="">在代码（LiveCodeBench）、数学（MATH-500）等多项基准上<strong>超越 GPT-4o 和 Claude 3.5 Sonnet</strong></li>
+</ul>
+<p>关键工程创新：</p>
+<ul>
+<li class=""><strong>FP8 混合精度训练</strong>：使用 8 位浮点数训练大型 MoE，显著降低显存和带宽需求</li>
+<li class=""><strong>DualPipe 流水线并行</strong>：通过前向-反向重叠减少 GPU 空置时间</li>
+<li class=""><strong>辅助损失无负载均衡</strong>：创新的 MoE 负载均衡方法，不影响模型性能</li>
+<li class=""><strong>MLA（Multi-head Latent Attention）</strong>：低秩 KV 缓存压缩，减少 KV Cache 显存</li>
+</ul>
+<p><strong>DeepSeek-R1（2025 年 1 月）</strong>：</p>
+<ul>
+<li class="">基于 V3 的推理模型，类似 OpenAI o1</li>
+<li class="">通过强化学习（GRPO 算法）训练长链推理（无需人工标注推理步骤）</li>
+<li class="">在数学竞赛、代码竞赛基准上与 o1 持平或超越</li>
+<li class="">完整开源（MIT 许可证），包括训练细节</li>
+<li class="">DeepSeek-R1 的发布引发全球 AI 行业震动，引起对西方 AI 主导地位的广泛讨论</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="yi-系列零一万物">Yi 系列（零一万物）<a href="#yi-系列零一万物" class="hash-link" aria-label="Yi 系列（零一万物）的直接链接" title="Yi 系列（零一万物）的直接链接" translate="no">​</a></h2>
+<p><strong>零一万物</strong>由前 Google Brain 科学家、Transformer 论文联合作者 Kai-Fu Lee（李开复）创立。</p>
+<ul>
+<li class=""><strong>Yi-34B</strong>：高质量 34B 模型，英中双语均衡</li>
+<li class=""><strong>Yi-9B</strong>：高效小模型</li>
+<li class=""><strong>Yi-VL</strong>：视觉语言版本</li>
+<li class="">训练数据包含大量经过质量过滤的中英文语料</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phi-34-系列微软小但强">Phi-3/4 系列（微软）：小但强<a href="#phi-34-系列微软小但强" class="hash-link" aria-label="Phi-3/4 系列（微软）：小但强的直接链接" title="Phi-3/4 系列（微软）：小但强的直接链接" translate="no">​</a></h2>
+<p>微软研究院的 Phi 系列专注于&quot;小而强&quot;的路线，探索高质量数据对小模型的影响上限：</p>
+<p><strong>Phi-3（2024 年 4 月）</strong>：</p>
+<ul>
+<li class="">Phi-3-mini（3.8B）：在 MMLU、HumanEval 上超越 LLaMA 2 13B</li>
+<li class="">核心理念：高质量&quot;教科书级&quot;合成数据可让小模型媲美大模型</li>
+<li class="">Phi-3-small（7B）、Phi-3-medium（14B）持续扩展</li>
+</ul>
+<p><strong>Phi-4（2024 年 12 月）</strong>：</p>
+<ul>
+<li class="">14B 参数，在数学推理上超越 GPT-4o（MATH 基准）</li>
+<li class="">大量使用合成数据（Synthetic Data）训练</li>
+<li class="">表明合成数据是突破真实数据瓶颈的有效路径</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开源-vs-闭源的系统对比">开源 vs 闭源的系统对比<a href="#开源-vs-闭源的系统对比" class="hash-link" aria-label="开源 vs 闭源的系统对比的直接链接" title="开源 vs 闭源的系统对比的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>维度</th><th>开源模型</th><th>闭源 API</th></tr></thead><tbody><tr><td><strong>成本</strong></td><td>推理成本（GPU 费用），高并发下可能更低</td><td>按 Token 计费，低并发下较便宜</td></tr><tr><td><strong>隐私</strong></td><td>数据不离开本地/内网，完全可控</td><td>数据发送至第三方服务器</td></tr><tr><td><strong>定制化</strong></td><td>可在私有数据上微调，改变模型行为</td><td>通常只能通过 Prompt Engineering</td></tr><tr><td><strong>控制权</strong></td><td>完全控制模型版本和行为</td><td>供应商可随时更新或停止服务</td></tr><tr><td><strong>维护成本</strong></td><td>需要自建推理基础设施</td><td>零运维</td></tr><tr><td><strong>能力上限</strong></td><td>通常略低于最新闭源旗舰</td><td>持续更新，能力领先</td></tr><tr><td><strong>合规性</strong></td><td>适合金融、医疗等数据不出境要求</td><td>需评估数据合规风险</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="开源模型选型指南">开源模型选型指南<a href="#开源模型选型指南" class="hash-link" aria-label="开源模型选型指南的直接链接" title="开源模型选型指南的直接链接" translate="no">​</a></h2>
+<p>根据应用场景选择模型：</p>
+<p><strong>对话助手、通用任务（资源充足）</strong>：</p>
+<ul>
+<li class="">LLaMA 3.1 70B 或 Qwen2.5 72B</li>
+<li class="">具备强大推理和指令遵循能力</li>
+</ul>
+<p><strong>代码生成与开发辅助</strong>：</p>
+<ul>
+<li class="">DeepSeek-V3 / Qwen2.5-Coder 72B（顶级效果）</li>
+<li class="">Code LLaMA 70B / Qwen2.5-Coder 32B（成本平衡）</li>
+</ul>
+<p><strong>中文任务优先</strong>：</p>
+<ul>
+<li class="">Qwen2.5 72B（综合最强）</li>
+<li class="">DeepSeek-V3（能力顶尖）</li>
+</ul>
+<p><strong>数学与逻辑推理</strong>：</p>
+<ul>
+<li class="">DeepSeek-R1 / Qwen2.5-Math 72B</li>
+</ul>
+<p><strong>设备端/边缘推理</strong>：</p>
+<ul>
+<li class="">LLaMA 3.2 1B/3B（Meta 官方）</li>
+<li class="">Phi-3 Mini 3.8B（微软）</li>
+<li class="">Qwen2.5 0.5B/1.5B</li>
+</ul>
+<p><strong>成本极度敏感的批量推理</strong>：</p>
+<ul>
+<li class="">Mistral 7B / LLaMA 3 8B（高吞吐量）</li>
+</ul>
+<p>开源 LLM 生态在 2024 年的快速演进使得许多任务场景下，开源模型的能力已足够满足生产需求，同时提供了闭源 API 无法给予的控制权和隐私保障。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-doc/docs/llm/models/llama"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">LLaMA 系列与 Meta AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-doc/docs/llm/training/pretraining"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">大规模预训练</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#mistral-7b高密度小模型的标杆" class="table-of-contents__link toc-highlight">Mistral 7B：高密度小模型的标杆</a></li><li><a href="#mixtral-8x7bmoe-架构的开源代表" class="table-of-contents__link toc-highlight">Mixtral 8x7B：MoE 架构的开源代表</a></li><li><a href="#qwen25-系列阿里云的中文最强" class="table-of-contents__link toc-highlight">Qwen2.5 系列：阿里云的中文最强</a></li><li><a href="#deepseek-r1v3国产顶级的成本革命" class="table-of-contents__link toc-highlight">DeepSeek R1/V3：国产顶级的成本革命</a></li><li><a href="#yi-系列零一万物" class="table-of-contents__link toc-highlight">Yi 系列（零一万物）</a></li><li><a href="#phi-34-系列微软小但强" class="table-of-contents__link toc-highlight">Phi-3/4 系列（微软）：小但强</a></li><li><a href="#开源-vs-闭源的系统对比" class="table-of-contents__link toc-highlight">开源 vs 闭源的系统对比</a></li><li><a href="#开源模型选型指南" class="table-of-contents__link toc-highlight">开源模型选型指南</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 AI Docs.</div></div></div></footer></div>
+</body>
+</html>

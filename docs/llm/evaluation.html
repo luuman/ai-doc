@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-llm/evaluation" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">LLM 评测体系 | AI Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/ai-doc/docs/llm/evaluation"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="LLM 评测体系 | AI Docs"><meta data-rh="true" name="description" content="随着大语言模型的快速发展，如何科学、客观地评估模型能力成为关键问题。本文系统介绍 LLM 评测的维度、主流基准数据集、排行榜以及评测体系的局限性。"><meta data-rh="true" property="og:description" content="随着大语言模型的快速发展，如何科学、客观地评估模型能力成为关键问题。本文系统介绍 LLM 评测的维度、主流基准数据集、排行榜以及评测体系的局限性。"><link data-rh="true" rel="icon" href="/ai-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/ai-doc/docs/llm/evaluation"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/evaluation" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/evaluation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LLM 评测体系","item":"https://luuman.github.io/ai-doc/docs/llm/evaluation"}]}</script><link rel="stylesheet" href="/ai-doc/assets/css/styles.cc5c71b5.css">
+<script src="/ai-doc/assets/js/runtime~main.5a96ce5f.js" defer="defer"></script>
+<script src="/ai-doc/assets/js/main.21a9e295.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/ai-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">AI</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/tauri-doc/docs" class="dropdownMenuItem_VBaP">Tauri</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/ai-doc/docs">Docs</a><a class="navLink_RnnM" href="/ai-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-doc/docs"><span title="知识库总览" class="linkLabel_WmDU">知识库总览</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="categoryLinkLabel_W154">AI 全景概述</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="linkLabel_WmDU">AI 全景概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/history"><span title="AI 发展里程碑" class="linkLabel_WmDU">AI 发展里程碑</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/paradigms"><span title="符号主义 vs 连接主义" class="linkLabel_WmDU">符号主义 vs 连接主义</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/agi"><span title="弱 AI、强 AI 与 AGI" class="linkLabel_WmDU">弱 AI、强 AI 与 AGI</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/fundamentals"><span title="基础理论" class="categoryLinkLabel_W154">基础理论</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）" class="categoryLinkLabel_W154">大语言模型（LLM）</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）概述" class="linkLabel_WmDU">大语言模型（LLM）概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="模型原理" class="categoryLinkLabel_W154">模型原理</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="自回归语言模型" class="linkLabel_WmDU">自回归语言模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/tokenization"><span title="Tokenization 与词汇表" class="linkLabel_WmDU">Tokenization 与词汇表</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/scaling-law"><span title="Scaling Law" class="linkLabel_WmDU">Scaling Law</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/attention"><span title="注意力机制详解" class="linkLabel_WmDU">注意力机制详解</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="主流模型" class="categoryLinkLabel_W154">主流模型</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="GPT 系列模型" class="linkLabel_WmDU">GPT 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/claude"><span title="Claude 系列模型" class="linkLabel_WmDU">Claude 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/gemini"><span title="Gemini 系列模型" class="linkLabel_WmDU">Gemini 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/llama"><span title="LLaMA 系列与 Meta AI" class="linkLabel_WmDU">LLaMA 系列与 Meta AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/open-source"><span title="开源大模型全景" class="linkLabel_WmDU">开源大模型全景</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="训练体系" class="categoryLinkLabel_W154">训练体系</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="大规模预训练" class="linkLabel_WmDU">大规模预训练</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/sft"><span title="监督微调（SFT）" class="linkLabel_WmDU">监督微调（SFT）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/rlhf"><span title="RLHF 与偏好优化" class="linkLabel_WmDU">RLHF 与偏好优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/lora"><span title="LoRA 与参数高效微调" class="linkLabel_WmDU">LoRA 与参数高效微调</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/alignment"><span title="模型对齐（Alignment）" class="linkLabel_WmDU">模型对齐（Alignment）</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai-doc/docs/llm/evaluation"><span title="LLM 评测体系" class="linkLabel_WmDU">LLM 评测体系</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/multimodal"><span title="多模态 AI" class="categoryLinkLabel_W154">多模态 AI</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/prompt-engineering"><span title="提示工程" class="categoryLinkLabel_W154">提示工程</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/development"><span title="AI 应用开发" class="categoryLinkLabel_W154">AI 应用开发</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development"><span title="AI 应用开发概述" class="linkLabel_WmDU">AI 应用开发概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="API 接入" class="categoryLinkLabel_W154">API 接入</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="Anthropic API 使用指南" class="linkLabel_WmDU">Anthropic API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/openai"><span title="OpenAI API 使用指南" class="linkLabel_WmDU">OpenAI API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/google-ai"><span title="Google AI API" class="linkLabel_WmDU">Google AI API</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="开发框架" class="categoryLinkLabel_W154">开发框架</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="LangChain 开发框架" class="linkLabel_WmDU">LangChain 开发框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/llamaindex"><span title="LlamaIndex 框架" class="linkLabel_WmDU">LlamaIndex 框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/dspy"><span title="DSPy 编程框架" class="linkLabel_WmDU">DSPy 编程框架</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/rag"><span title="RAG 检索增强" class="categoryLinkLabel_W154">RAG 检索增强</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag"><span title="检索增强生成（RAG）概述" class="linkLabel_WmDU">检索增强生成（RAG）概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/embeddings"><span title="Embedding 模型选型" class="linkLabel_WmDU">Embedding 模型选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/vector-db"><span title="向量数据库选型" class="linkLabel_WmDU">向量数据库选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/chunking"><span title="文档分块策略" class="linkLabel_WmDU">文档分块策略</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/retrieval"><span title="检索与重排优化" class="linkLabel_WmDU">检索与重排优化</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent" class="categoryLinkLabel_W154">AI Agent</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent 概述" class="linkLabel_WmDU">AI Agent 概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/tool-use"><span title="工具调用（Tool Use）" class="linkLabel_WmDU">工具调用（Tool Use）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/memory"><span title="Agent 记忆设计" class="linkLabel_WmDU">Agent 记忆设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/planning"><span title="Agent 规划与推理" class="linkLabel_WmDU">Agent 规划与推理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/multi-agent"><span title="多智能体系统" class="linkLabel_WmDU">多智能体系统</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/engineering"><span title="AI 工程架构" class="categoryLinkLabel_W154">AI 工程架构</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/tools"><span title="AI 工具生态" class="categoryLinkLabel_W154">AI 工具生态</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/product"><span title="AI 产品与商业" class="categoryLinkLabel_W154">AI 产品与商业</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/industry"><span title="行业应用" class="categoryLinkLabel_W154">行业应用</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/safety"><span title="安全与伦理" class="categoryLinkLabel_W154">安全与伦理</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/future"><span title="未来趋势" class="categoryLinkLabel_W154">未来趋势</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/ai-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">大语言模型（LLM）</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">LLM 评测体系</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>LLM 评测体系</h1></header>
+<p>随着大语言模型的快速发展，如何科学、客观地评估模型能力成为关键问题。本文系统介绍 LLM 评测的维度、主流基准数据集、排行榜以及评测体系的局限性。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="评测维度">评测维度<a href="#评测维度" class="hash-link" aria-label="评测维度的直接链接" title="评测维度的直接链接" translate="no">​</a></h2>
+<p>LLM 的能力是多维度的，单一基准无法全面衡量模型质量。主要评测维度包括：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="知识与理解">知识与理解<a href="#知识与理解" class="hash-link" aria-label="知识与理解的直接链接" title="知识与理解的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">多学科知识的广度和准确性（医学、法律、科学、历史等）</li>
+<li class="">常识推理与世界知识</li>
+<li class="">多语言理解能力</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="推理能力">推理能力<a href="#推理能力" class="hash-link" aria-label="推理能力的直接链接" title="推理能力的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">数学推理（多步计算、代数、几何）</li>
+<li class="">逻辑推理（演绎、归纳、类比）</li>
+<li class="">科学推理（物理、化学问题求解）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="代码生成">代码生成<a href="#代码生成" class="hash-link" aria-label="代码生成的直接链接" title="代码生成的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">代码正确性（能否通过测试用例）</li>
+<li class="">代码质量（可读性、效率）</li>
+<li class="">代码调试（找出并修复 Bug）</li>
+<li class="">真实工程任务（修复 GitHub Issue）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="安全性">安全性<a href="#安全性" class="hash-link" aria-label="安全性的直接链接" title="安全性的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">有害内容生成率（红队测试）</li>
+<li class="">越狱（Jailbreak）抵抗性</li>
+<li class="">敏感话题处理的一致性</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="指令遵循">指令遵循<a href="#指令遵循" class="hash-link" aria-label="指令遵循的直接链接" title="指令遵循的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">复杂、多步骤指令的准确执行</li>
+<li class="">格式要求的遵循（如&quot;以 JSON 格式输出&quot;）</li>
+<li class="">约束条件的满足</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="长上下文理解">长上下文理解<a href="#长上下文理解" class="hash-link" aria-label="长上下文理解的直接链接" title="长上下文理解的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">从超长文档中精确检索信息</li>
+<li class="">长文档摘要的准确性</li>
+<li class="">跨多文档的信息综合</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="主要英文基准">主要英文基准<a href="#主要英文基准" class="hash-link" aria-label="主要英文基准的直接链接" title="主要英文基准的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mmlumassive-multitask-language-understanding">MMLU（Massive Multitask Language Understanding）<a href="#mmlumassive-multitask-language-understanding" class="hash-link" aria-label="MMLU（Massive Multitask Language Understanding）的直接链接" title="MMLU（Massive Multitask Language Understanding）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：约 57 个学科，14,000+ 多项选择题</li>
+<li class=""><strong>覆盖范围</strong>：数学、物理、历史、法律、医学、计算机科学等</li>
+<li class=""><strong>格式</strong>：四选一多项选择，零样本或少样本</li>
+<li class=""><strong>用途</strong>：衡量模型广泛知识覆盖能力</li>
+<li class=""><strong>局限</strong>：多项选择格式与真实对话差距大；高分模型之间区分度下降（天花板效应）</li>
+</ul>
+<p>代表性得分（截至 2024 年底）：</p>
+<ul>
+<li class="">GPT-4o：约 88.7%</li>
+<li class="">Claude 3.5 Sonnet：约 88.7%</li>
+<li class="">LLaMA 3.1 405B：约 88.6%</li>
+<li class="">人类专家：约 89.8%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="humaneval代码">HumanEval（代码）<a href="#humaneval代码" class="hash-link" aria-label="HumanEval（代码）的直接链接" title="HumanEval（代码）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：164 道 Python 编程题</li>
+<li class=""><strong>评测方式</strong>：pass@k（k次生成中至少一次通过所有测试用例的比例）</li>
+<li class=""><strong>覆盖范围</strong>：字符串处理、数学计算、列表操作等基础编程</li>
+<li class=""><strong>用途</strong>：衡量代码生成基础能力</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gsm8k小学数学">GSM8K（小学数学）<a href="#gsm8k小学数学" class="hash-link" aria-label="GSM8K（小学数学）的直接链接" title="GSM8K（小学数学）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：8,500 道小学数学文字题（训练集 7,473，测试集 1,319）</li>
+<li class=""><strong>格式</strong>：多步骤文字题，要求逐步推理并给出数值答案</li>
+<li class=""><strong>用途</strong>：衡量基础数学推理能力</li>
+<li class=""><strong>现状</strong>：顶级模型（GPT-4o、Claude 3.5）已接近满分（98%+），区分度不足</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hellaswag常识推理">HellaSwag（常识推理）<a href="#hellaswag常识推理" class="hash-link" aria-label="HellaSwag（常识推理）的直接链接" title="HellaSwag（常识推理）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>任务</strong>：给定情境描述，选择最合理的续写（四选一）</li>
+<li class=""><strong>人类准确率</strong>：约 95%，早期 LLM（GPT-2）仅约 40%</li>
+<li class=""><strong>现状</strong>：顶级模型已接近人类水平，区分度有限</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="math竞赛数学">MATH（竞赛数学）<a href="#math竞赛数学" class="hash-link" aria-label="MATH（竞赛数学）的直接链接" title="MATH（竞赛数学）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：12,500 道数学竞赛题（AMC、AIME 级别）</li>
+<li class=""><strong>难度</strong>：从初级竞赛到 IMO 预选题</li>
+<li class=""><strong>格式</strong>：开放作答，需精确生成数学表达式或数值</li>
+<li class=""><strong>用途</strong>：衡量高阶数学推理，仍有良好区分度</li>
+<li class="">代表性得分：GPT-4o 约 76%，o1 约 94%，o3 接近 97%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpqagraduate-level-problem-solving">GPQA（Graduate-Level Problem-Solving）<a href="#gpqagraduate-level-problem-solving" class="hash-link" aria-label="GPQA（Graduate-Level Problem-Solving）的直接链接" title="GPQA（Graduate-Level Problem-Solving）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：448 道研究生级别多项选择题（生物学、物理学、化学）</li>
+<li class=""><strong>人类专家（博士）准确率</strong>：约 65%</li>
+<li class=""><strong>特点</strong>：题目需要真正的深度理解，即使通过搜索引擎也难以作答</li>
+<li class=""><strong>代表性得分</strong>：GPT-4o 约 53%，Claude 3.5 Sonnet 约 59%，o1 约 78%</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="中文基准">中文基准<a href="#中文基准" class="hash-link" aria-label="中文基准的直接链接" title="中文基准的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-eval">C-Eval<a href="#c-eval" class="hash-link" aria-label="C-Eval的直接链接" title="C-Eval的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>题目数量</strong>：13,948 道多项选择题，52 个学科</li>
+<li class=""><strong>语言</strong>：中文</li>
+<li class=""><strong>覆盖</strong>：中国高中到大学专业知识，包含中国特色学科（马克思主义、中国近代史）</li>
+<li class=""><strong>用途</strong>：衡量模型对中文知识和中国教育体系的掌握程度</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cmmluchinese-massive-multitask-language-understanding">CMMLU（Chinese Massive Multitask Language Understanding）<a href="#cmmluchinese-massive-multitask-language-understanding" class="hash-link" aria-label="CMMLU（Chinese Massive Multitask Language Understanding）的直接链接" title="CMMLU（Chinese Massive Multitask Language Understanding）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">中文版 MMLU，覆盖 67 个科目</li>
+<li class="">包含更多中国本土文化、历史、法律知识</li>
+<li class="">与 C-Eval 互补，更全面覆盖中文知识</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alignbench">AlignBench<a href="#alignbench" class="hash-link" aria-label="AlignBench的直接链接" title="AlignBench的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>评测方式</strong>：基于 GPT-4 的自动评分，人工校验</li>
+<li class=""><strong>覆盖维度</strong>：中文写作、中文推理、中文知识、角色扮演、代码、数学等</li>
+<li class=""><strong>特点</strong>：评测模型的综合中文能力，使用裁判模型（Judge LM）打分</li>
+<li class="">由智源研究院（BAAI）开发</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="代码评测">代码评测<a href="#代码评测" class="hash-link" aria-label="代码评测的直接链接" title="代码评测的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="livecodebench">LiveCodeBench<a href="#livecodebench" class="hash-link" aria-label="LiveCodeBench的直接链接" title="LiveCodeBench的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>特点</strong>：持续收集竞赛编程平台（LeetCode、Codeforces、AtCoder）的最新题目</li>
+<li class=""><strong>优势</strong>：防止数据污染（题目发布在模型训练数据截止日期之后）</li>
+<li class=""><strong>格式</strong>：算法竞赛题，多个测试用例验证</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="swe-bench真实工程任务">SWE-Bench（真实工程任务）<a href="#swe-bench真实工程任务" class="hash-link" aria-label="SWE-Bench（真实工程任务）的直接链接" title="SWE-Bench（真实工程任务）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>任务</strong>：给定真实 GitHub Issue，要求模型修改代码库使相应测试用例通过</li>
+<li class=""><strong>SWE-Bench Verified</strong>：人工验证的 500 个可解 Issue</li>
+<li class=""><strong>代表性得分</strong>（2024 年）：
+<ul>
+<li class="">Claude 3.5 Sonnet：约 49%（使用 Scaffold）</li>
+<li class="">GPT-4o：约 38%</li>
+<li class="">开源最佳：约 35%</li>
+</ul>
+</li>
+<li class=""><strong>意义</strong>：最接近真实软件工程场景的代码评测</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="竞技场排行">竞技场排行<a href="#竞技场排行" class="hash-link" aria-label="竞技场排行的直接链接" title="竞技场排行的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chatbot-arenalmsys">Chatbot Arena（LMSYS）<a href="#chatbot-arenalmsys" class="hash-link" aria-label="Chatbot Arena（LMSYS）的直接链接" title="Chatbot Arena（LMSYS）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>机制</strong>：用户与两个匿名 LLM 对话，对比后投票选出更好的回答（盲测）</li>
+<li class=""><strong>评分系统</strong>：Elo 评分（来自国际象棋等竞技系统）</li>
+<li class=""><strong>数据量</strong>：数百万次人工投票，覆盖多种语言和任务类型</li>
+<li class=""><strong>优势</strong>：基于真实用户偏好，不可游榜（模型身份对用户隐藏）</li>
+<li class=""><strong>局限</strong>：用户分布有偏（技术用户偏多），任务分布与真实应用有差异</li>
+</ul>
+<p>Chatbot Arena 被广泛认为是最能反映&quot;真实用户满意度&quot;的 LLM 排行榜。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="评测的局限性">评测的局限性<a href="#评测的局限性" class="hash-link" aria-label="评测的局限性的直接链接" title="评测的局限性的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="数据污染data-contamination">数据污染（Data Contamination）<a href="#数据污染data-contamination" class="hash-link" aria-label="数据污染（Data Contamination）的直接链接" title="数据污染（Data Contamination）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">评测数据集可能已出现在模型训练语料中（通过爬虫）</li>
+<li class="">模型可能是在&quot;记忆答案&quot;而非真正理解</li>
+<li class="">缓解方法：使用动态更新的评测集（如 LiveCodeBench）、在训练数据截止后发布测试集</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="游榜问题benchmark-gaming">游榜问题（Benchmark Gaming）<a href="#游榜问题benchmark-gaming" class="hash-link" aria-label="游榜问题（Benchmark Gaming）的直接链接" title="游榜问题（Benchmark Gaming）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">模型开发者针对特定基准进行专项优化（如大量使用与基准风格相近的训练数据）</li>
+<li class="">基准分数提升，但真实能力并未等比提升</li>
+<li class="">典型案例：某些模型在 MMLU 上刷分但在 Chatbot Arena 上排名远低于预期</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="主观偏好的不可测量性">主观偏好的不可测量性<a href="#主观偏好的不可测量性" class="hash-link" aria-label="主观偏好的不可测量性的直接链接" title="主观偏好的不可测量性的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">许多真实应用中最重要的因素（如回答的有趣程度、写作风格）难以量化</li>
+<li class="">不同用户对&quot;好回答&quot;的定义可能截然不同</li>
+<li class="">文化差异导致评测结果在不同地区的适用性存疑</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="评测覆盖不完整">评测覆盖不完整<a href="#评测覆盖不完整" class="hash-link" aria-label="评测覆盖不完整的直接链接" title="评测覆盖不完整的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">现有基准主要评测知识和推理，对&quot;长期对话一致性&quot;&quot;复杂 Agent 任务&quot;等能力覆盖不足</li>
+<li class="">安全性评测（红队测试）难以系统化，存在&quot;猫鼠游戏&quot;问题</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="自动评测-vs-人工评测">自动评测 vs 人工评测<a href="#自动评测-vs-人工评测" class="hash-link" aria-label="自动评测 vs 人工评测的直接链接" title="自动评测 vs 人工评测的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>维度</th><th>自动评测</th><th>人工评测</th></tr></thead><tbody><tr><td>成本</td><td>低（可大规模运行）</td><td>高（人力密集）</td></tr><tr><td>速度</td><td>快（分钟级）</td><td>慢（天到周级）</td></tr><tr><td>一致性</td><td>高（完全可复现）</td><td>低（标注员差异）</td></tr><tr><td>主观任务</td><td>差（需要裁判模型，引入偏差）</td><td>好（人类能感知微妙差异）</td></tr><tr><td>覆盖面</td><td>有限（已有数据集范围内）</td><td>灵活（可评测任意任务）</td></tr><tr><td>代表性</td><td>有限（可能不反映真实用例）</td><td>高（用户真实感受）</td></tr></tbody></table>
+<p>**裁判模型（LLM-as-Judge）**是近年兴起的折中方案：用 GPT-4 等强大模型对 LLM 输出打分，结合自动评测的速度和人工评测的灵活性，但继承了裁判模型自身的偏见（如偏好自身风格、偏爱较长回答等）。</p>
+<p>构建全面可信的 LLM 评测体系，是 AI 研究社区当前面临的重要方法论挑战之一。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-doc/docs/llm/training/alignment"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">模型对齐（Alignment）</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-doc/docs/multimodal"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">多模态 AI 概述</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#评测维度" class="table-of-contents__link toc-highlight">评测维度</a><ul><li><a href="#知识与理解" class="table-of-contents__link toc-highlight">知识与理解</a></li><li><a href="#推理能力" class="table-of-contents__link toc-highlight">推理能力</a></li><li><a href="#代码生成" class="table-of-contents__link toc-highlight">代码生成</a></li><li><a href="#安全性" class="table-of-contents__link toc-highlight">安全性</a></li><li><a href="#指令遵循" class="table-of-contents__link toc-highlight">指令遵循</a></li><li><a href="#长上下文理解" class="table-of-contents__link toc-highlight">长上下文理解</a></li></ul></li><li><a href="#主要英文基准" class="table-of-contents__link toc-highlight">主要英文基准</a><ul><li><a href="#mmlumassive-multitask-language-understanding" class="table-of-contents__link toc-highlight">MMLU（Massive Multitask Language Understanding）</a></li><li><a href="#humaneval代码" class="table-of-contents__link toc-highlight">HumanEval（代码）</a></li><li><a href="#gsm8k小学数学" class="table-of-contents__link toc-highlight">GSM8K（小学数学）</a></li><li><a href="#hellaswag常识推理" class="table-of-contents__link toc-highlight">HellaSwag（常识推理）</a></li><li><a href="#math竞赛数学" class="table-of-contents__link toc-highlight">MATH（竞赛数学）</a></li><li><a href="#gpqagraduate-level-problem-solving" class="table-of-contents__link toc-highlight">GPQA（Graduate-Level Problem-Solving）</a></li></ul></li><li><a href="#中文基准" class="table-of-contents__link toc-highlight">中文基准</a><ul><li><a href="#c-eval" class="table-of-contents__link toc-highlight">C-Eval</a></li><li><a href="#cmmluchinese-massive-multitask-language-understanding" class="table-of-contents__link toc-highlight">CMMLU（Chinese Massive Multitask Language Understanding）</a></li><li><a href="#alignbench" class="table-of-contents__link toc-highlight">AlignBench</a></li></ul></li><li><a href="#代码评测" class="table-of-contents__link toc-highlight">代码评测</a><ul><li><a href="#livecodebench" class="table-of-contents__link toc-highlight">LiveCodeBench</a></li><li><a href="#swe-bench真实工程任务" class="table-of-contents__link toc-highlight">SWE-Bench（真实工程任务）</a></li></ul></li><li><a href="#竞技场排行" class="table-of-contents__link toc-highlight">竞技场排行</a><ul><li><a href="#chatbot-arenalmsys" class="table-of-contents__link toc-highlight">Chatbot Arena（LMSYS）</a></li></ul></li><li><a href="#评测的局限性" class="table-of-contents__link toc-highlight">评测的局限性</a><ul><li><a href="#数据污染data-contamination" class="table-of-contents__link toc-highlight">数据污染（Data Contamination）</a></li><li><a href="#游榜问题benchmark-gaming" class="table-of-contents__link toc-highlight">游榜问题（Benchmark Gaming）</a></li><li><a href="#主观偏好的不可测量性" class="table-of-contents__link toc-highlight">主观偏好的不可测量性</a></li><li><a href="#评测覆盖不完整" class="table-of-contents__link toc-highlight">评测覆盖不完整</a></li></ul></li><li><a href="#自动评测-vs-人工评测" class="table-of-contents__link toc-highlight">自动评测 vs 人工评测</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 AI Docs.</div></div></div></footer></div>
+</body>
+</html>

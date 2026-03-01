@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-llm/models/gpt-series" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">GPT 系列模型 | AI Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/ai-doc/docs/llm/models/gpt-series"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="GPT 系列模型 | AI Docs"><meta data-rh="true" name="description" content="GPT（Generative Pre-trained Transformer）系列是 OpenAI 开发的大语言模型家族，从 2018 年的 GPT-1 到 2024 年的 o3，每一代都推动了 AI 能力的边界。本文梳理 GPT 系列的技术演进脉络与商业化战略。"><meta data-rh="true" property="og:description" content="GPT（Generative Pre-trained Transformer）系列是 OpenAI 开发的大语言模型家族，从 2018 年的 GPT-1 到 2024 年的 o3，每一代都推动了 AI 能力的边界。本文梳理 GPT 系列的技术演进脉络与商业化战略。"><link data-rh="true" rel="icon" href="/ai-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/ai-doc/docs/llm/models/gpt-series"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/models/gpt-series" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/ai-doc/docs/llm/models/gpt-series" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"GPT 系列模型","item":"https://luuman.github.io/ai-doc/docs/llm/models/gpt-series"}]}</script><link rel="stylesheet" href="/ai-doc/assets/css/styles.cc5c71b5.css">
+<script src="/ai-doc/assets/js/runtime~main.5a96ce5f.js" defer="defer"></script>
+<script src="/ai-doc/assets/js/main.21a9e295.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/ai-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">AI</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/tauri-doc/docs" class="dropdownMenuItem_VBaP">Tauri</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/ai-doc/docs">Docs</a><a class="navLink_RnnM" href="/ai-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-doc/docs"><span title="知识库总览" class="linkLabel_WmDU">知识库总览</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="categoryLinkLabel_W154">AI 全景概述</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview"><span title="AI 全景概述" class="linkLabel_WmDU">AI 全景概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/history"><span title="AI 发展里程碑" class="linkLabel_WmDU">AI 发展里程碑</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/paradigms"><span title="符号主义 vs 连接主义" class="linkLabel_WmDU">符号主义 vs 连接主义</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/overview/agi"><span title="弱 AI、强 AI 与 AGI" class="linkLabel_WmDU">弱 AI、强 AI 与 AGI</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/fundamentals"><span title="基础理论" class="categoryLinkLabel_W154">基础理论</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）" class="categoryLinkLabel_W154">大语言模型（LLM）</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm"><span title="大语言模型（LLM）概述" class="linkLabel_WmDU">大语言模型（LLM）概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="模型原理" class="categoryLinkLabel_W154">模型原理</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/autoregressive"><span title="自回归语言模型" class="linkLabel_WmDU">自回归语言模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/tokenization"><span title="Tokenization 与词汇表" class="linkLabel_WmDU">Tokenization 与词汇表</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/scaling-law"><span title="Scaling Law" class="linkLabel_WmDU">Scaling Law</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/principles/attention"><span title="注意力机制详解" class="linkLabel_WmDU">注意力机制详解</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="主流模型" class="categoryLinkLabel_W154">主流模型</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai-doc/docs/llm/models/gpt-series"><span title="GPT 系列模型" class="linkLabel_WmDU">GPT 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/claude"><span title="Claude 系列模型" class="linkLabel_WmDU">Claude 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/gemini"><span title="Gemini 系列模型" class="linkLabel_WmDU">Gemini 系列模型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/llama"><span title="LLaMA 系列与 Meta AI" class="linkLabel_WmDU">LLaMA 系列与 Meta AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/models/open-source"><span title="开源大模型全景" class="linkLabel_WmDU">开源大模型全景</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="训练体系" class="categoryLinkLabel_W154">训练体系</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/pretraining"><span title="大规模预训练" class="linkLabel_WmDU">大规模预训练</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/sft"><span title="监督微调（SFT）" class="linkLabel_WmDU">监督微调（SFT）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/rlhf"><span title="RLHF 与偏好优化" class="linkLabel_WmDU">RLHF 与偏好优化</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/lora"><span title="LoRA 与参数高效微调" class="linkLabel_WmDU">LoRA 与参数高效微调</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/training/alignment"><span title="模型对齐（Alignment）" class="linkLabel_WmDU">模型对齐（Alignment）</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/llm/evaluation"><span title="LLM 评测体系" class="linkLabel_WmDU">LLM 评测体系</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/multimodal"><span title="多模态 AI" class="categoryLinkLabel_W154">多模态 AI</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/prompt-engineering"><span title="提示工程" class="categoryLinkLabel_W154">提示工程</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/ai-doc/docs/development"><span title="AI 应用开发" class="categoryLinkLabel_W154">AI 应用开发</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development"><span title="AI 应用开发概述" class="linkLabel_WmDU">AI 应用开发概述</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="API 接入" class="categoryLinkLabel_W154">API 接入</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/anthropic"><span title="Anthropic API 使用指南" class="linkLabel_WmDU">Anthropic API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/openai"><span title="OpenAI API 使用指南" class="linkLabel_WmDU">OpenAI API 使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/apis/google-ai"><span title="Google AI API" class="linkLabel_WmDU">Google AI API</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="开发框架" class="categoryLinkLabel_W154">开发框架</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/langchain"><span title="LangChain 开发框架" class="linkLabel_WmDU">LangChain 开发框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/llamaindex"><span title="LlamaIndex 框架" class="linkLabel_WmDU">LlamaIndex 框架</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/frameworks/dspy"><span title="DSPy 编程框架" class="linkLabel_WmDU">DSPy 编程框架</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/rag"><span title="RAG 检索增强" class="categoryLinkLabel_W154">RAG 检索增强</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag"><span title="检索增强生成（RAG）概述" class="linkLabel_WmDU">检索增强生成（RAG）概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/embeddings"><span title="Embedding 模型选型" class="linkLabel_WmDU">Embedding 模型选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/vector-db"><span title="向量数据库选型" class="linkLabel_WmDU">向量数据库选型</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/chunking"><span title="文档分块策略" class="linkLabel_WmDU">文档分块策略</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/rag/retrieval"><span title="检索与重排优化" class="linkLabel_WmDU">检索与重排优化</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent" class="categoryLinkLabel_W154">AI Agent</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents"><span title="AI Agent 概述" class="linkLabel_WmDU">AI Agent 概述</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/tool-use"><span title="工具调用（Tool Use）" class="linkLabel_WmDU">工具调用（Tool Use）</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/memory"><span title="Agent 记忆设计" class="linkLabel_WmDU">Agent 记忆设计</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/planning"><span title="Agent 规划与推理" class="linkLabel_WmDU">Agent 规划与推理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-doc/docs/development/agents/multi-agent"><span title="多智能体系统" class="linkLabel_WmDU">多智能体系统</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/engineering"><span title="AI 工程架构" class="categoryLinkLabel_W154">AI 工程架构</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/tools"><span title="AI 工具生态" class="categoryLinkLabel_W154">AI 工具生态</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/product"><span title="AI 产品与商业" class="categoryLinkLabel_W154">AI 产品与商业</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/industry"><span title="行业应用" class="categoryLinkLabel_W154">行业应用</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/safety"><span title="安全与伦理" class="categoryLinkLabel_W154">安全与伦理</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/ai-doc/docs/future"><span title="未来趋势" class="categoryLinkLabel_W154">未来趋势</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/ai-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">大语言模型（LLM）</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">主流模型</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">GPT 系列模型</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>GPT 系列模型</h1></header>
+<p>GPT（Generative Pre-trained Transformer）系列是 OpenAI 开发的大语言模型家族，从 2018 年的 GPT-1 到 2024 年的 o3，每一代都推动了 AI 能力的边界。本文梳理 GPT 系列的技术演进脉络与商业化战略。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpt-12018生成式预训练的起点">GPT-1（2018）：生成式预训练的起点<a href="#gpt-12018生成式预训练的起点" class="hash-link" aria-label="GPT-1（2018）：生成式预训练的起点的直接链接" title="GPT-1（2018）：生成式预训练的起点的直接链接" translate="no">​</a></h2>
+<p><strong>论文</strong>：<em>Improving Language Understanding by Generative Pre-Training</em></p>
+<p>GPT-1 是 OpenAI 首次将&quot;预训练+微调&quot;范式系统化应用于 NLP 的尝试：</p>
+<ul>
+<li class=""><strong>参数量</strong>：1.17 亿（117M）</li>
+<li class=""><strong>架构</strong>：12 层 Transformer Decoder，768 维隐藏层</li>
+<li class=""><strong>训练数据</strong>：BooksCorpus（约 5GB，8亿词）</li>
+<li class=""><strong>核心贡献</strong>：证明了在大量无标注文本上预训练，然后在下游任务微调，能显著优于从头训练的监督模型</li>
+</ul>
+<p>GPT-1 的局限在于，每个下游任务仍需任务专用微调，尚未展现出零样本能力。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpt-22019零样本能力的展现">GPT-2（2019）：零样本能力的展现<a href="#gpt-22019零样本能力的展现" class="hash-link" aria-label="GPT-2（2019）：零样本能力的展现的直接链接" title="GPT-2（2019）：零样本能力的展现的直接链接" translate="no">​</a></h2>
+<p><strong>论文</strong>：<em>Language Models are Unsupervised Multitask Learners</em></p>
+<ul>
+<li class=""><strong>参数量</strong>：15 亿（1.5B），相比 GPT-1 增加约 12 倍</li>
+<li class=""><strong>训练数据</strong>：WebText（约 40GB，来自 Reddit 高分外链页面）</li>
+<li class=""><strong>词汇表</strong>：50,257 个 Token（Byte-Level BPE）</li>
+</ul>
+<p>GPT-2 的关键发现：在足够大的语言模型上，零样本（Zero-Shot）能力自然涌现：</p>
+<ul>
+<li class="">无需微调即可完成摘要、翻译、问答</li>
+<li class="">生成的长文本在主题一致性和流畅度上超越之前的模型</li>
+</ul>
+<p>GPT-2 因此被 OpenAI 以&quot;模型过于危险&quot;为由，分阶段发布（先发布小版本，再发布完整版）——这也是 AI 安全叙事在产业界首次引发广泛讨论。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpt-32020少样本学习的突破">GPT-3（2020）：少样本学习的突破<a href="#gpt-32020少样本学习的突破" class="hash-link" aria-label="GPT-3（2020）：少样本学习的突破的直接链接" title="GPT-3（2020）：少样本学习的突破的直接链接" translate="no">​</a></h2>
+<p><strong>论文</strong>：<em>Language Models are Few-Shot Learners</em></p>
+<ul>
+<li class=""><strong>参数量</strong>：1750 亿（175B），此前最大模型的约 100 倍</li>
+<li class=""><strong>训练数据</strong>：约 570GB 过滤后的 Common Crawl + Books + Wikipedia + WebText，共约 300B Token</li>
+<li class=""><strong>架构</strong>：96 层，96 个注意力头，12288 维隐藏层</li>
+</ul>
+<p>GPT-3 是 LLM 发展史上的里程碑：</p>
+<ul>
+<li class=""><strong>少样本（Few-Shot）学习</strong>：在 Prompt 中给出 1-20 个示例，无需梯度更新，即可适配大量任务</li>
+<li class=""><strong>上下文学习（In-Context Learning）</strong>：模型从上下文中&quot;学习&quot;任务形式，而非通过训练</li>
+<li class=""><strong>涌现能力首次大规模展现</strong>：算术、代码、逻辑推理等能力从质变到量变</li>
+</ul>
+<p>GPT-3 的局限：生成内容有时不遵循指令、会产生有害内容、存在虚假信息（Hallucination）。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructgpt2022rlhf-对齐">InstructGPT（2022）：RLHF 对齐<a href="#instructgpt2022rlhf-对齐" class="hash-link" aria-label="InstructGPT（2022）：RLHF 对齐的直接链接" title="InstructGPT（2022）：RLHF 对齐的直接链接" translate="no">​</a></h2>
+<p><strong>论文</strong>：<em>Training Language Models to Follow Instructions with Human Feedback</em></p>
+<p>InstructGPT 是将 GPT-3 从&quot;语言模型&quot;变为&quot;有用助手&quot;的关键一步：</p>
+<ul>
+<li class=""><strong>方法</strong>：在 GPT-3 上应用 RLHF（从人类反馈中强化学习）三阶段流程：监督微调（SFT）→ 奖励模型训练 → PPO 强化学习</li>
+<li class=""><strong>数据</strong>：OpenAI 雇佣专业标注员编写高质量指令-回答对，标注偏好</li>
+<li class=""><strong>效果</strong>：13 亿参数的 InstructGPT 在人类偏好评测中优于未对齐的 1750 亿 GPT-3</li>
+</ul>
+<p>InstructGPT 直接催生了 ChatGPT，并确立了 RLHF 作为 LLM 对齐标准流程的地位。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chatgpt-与-gpt-352022-2023">ChatGPT 与 GPT-3.5（2022-2023）<a href="#chatgpt-与-gpt-352022-2023" class="hash-link" aria-label="ChatGPT 与 GPT-3.5（2022-2023）的直接链接" title="ChatGPT 与 GPT-3.5（2022-2023）的直接链接" translate="no">​</a></h2>
+<p>ChatGPT 于 2022 年 11 月发布，本质上是基于 GPT-3.5（GPT-3 的改进版）应用 RLHF 的对话助手：</p>
+<ul>
+<li class="">5 天内突破 100 万用户，2 个月内突破 1 亿用户，成为历史上增长最快的消费级产品</li>
+<li class="">确立了&quot;对话式 AI 助手&quot;作为 LLM 主流交互范式</li>
+<li class="">推动 Google、Meta、Anthropic 等公司加速产品发布</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpt-42023多模态与考试成绩">GPT-4（2023）：多模态与考试成绩<a href="#gpt-42023多模态与考试成绩" class="hash-link" aria-label="GPT-4（2023）：多模态与考试成绩的直接链接" title="GPT-4（2023）：多模态与考试成绩的直接链接" translate="no">​</a></h2>
+<p><strong>技术报告</strong>：<em>GPT-4 Technical Report</em>（未公开架构细节）</p>
+<ul>
+<li class=""><strong>参数量</strong>：未公开（据传约 1.76T，使用 MoE 架构）</li>
+<li class=""><strong>训练数据</strong>：未公开，截止日期约 2021 年</li>
+<li class=""><strong>多模态</strong>：支持图像输入（Vision 能力）</li>
+</ul>
+<p>GPT-4 的标志性能力展示：</p>
+<ul>
+<li class="">律师资格考试（Bar Exam）：约 90 百分位</li>
+<li class="">SAT 数学：接近满分</li>
+<li class="">GRE 各科目均超过 80 百分位</li>
+<li class="">在多个医学、法律、工程专业考试中超过人类平均水平</li>
+</ul>
+<p>技术改进：</p>
+<ul>
+<li class="">更长的上下文窗口（最初 8K，后扩展至 128K）</li>
+<li class="">更强的指令遵循和多步推理</li>
+<li class="">减少幻觉和有害输出</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpt-4o2024实时多模态">GPT-4o（2024）：实时多模态<a href="#gpt-4o2024实时多模态" class="hash-link" aria-label="GPT-4o（2024）：实时多模态的直接链接" title="GPT-4o（2024）：实时多模态的直接链接" translate="no">​</a></h2>
+<p>GPT-4o（&quot;o&quot; 代表 omni，全能）是 OpenAI 首个原生多模态模型：</p>
+<ul>
+<li class=""><strong>原生多模态</strong>：文本、图像、音频在统一模型中处理，而非多模型拼接</li>
+<li class=""><strong>实时语音对话</strong>：低延迟音频对话，支持情感感知、打断对话</li>
+<li class=""><strong>视觉理解</strong>：识别图表、截图、实物照片并结合推理</li>
+<li class=""><strong>成本</strong>：相比 GPT-4 Turbo 降价 50%，速度提升约 2 倍</li>
+<li class=""><strong>免费访问</strong>：向 ChatGPT 免费用户开放（有限额）</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="o1--o3推理模型的新范式2024-2025">o1 / o3：推理模型的新范式（2024-2025）<a href="#o1--o3推理模型的新范式2024-2025" class="hash-link" aria-label="o1 / o3：推理模型的新范式（2024-2025）的直接链接" title="o1 / o3：推理模型的新范式（2024-2025）的直接链接" translate="no">​</a></h2>
+<p>OpenAI 的 o 系列代表了 LLM 的新方向——<strong>推理时计算扩展（Test-Time Compute Scaling）</strong>：</p>
+<ul>
+<li class=""><strong>内化 CoT（Chain-of-Thought）</strong>：模型在输出答案前，在内部执行长时间的&quot;思维链&quot;推理（用户不可见的推理过程）</li>
+<li class=""><strong>计算换精度</strong>：允许模型&quot;想更长时间&quot;，在数学、代码、科学推理上显著超越 GPT-4o</li>
+<li class=""><strong>o1（2024 年 9 月）</strong>：
+<ul>
+<li class="">在竞赛数学（AIME 2024）中达到约 83% 正确率（GPT-4o 约 13%）</li>
+<li class="">在 Codeforces 上达到 89 百分位</li>
+</ul>
+</li>
+<li class=""><strong>o1 pro / o3（2024 年 12 月）</strong>：
+<ul>
+<li class="">o3 在 ARC-AGI 基准上达到约 87.5%（此前最高约 53%）</li>
+<li class="">高计算版本在 AIME 2024 上接近满分</li>
+<li class="">被部分研究者认为是 AGI 能力的重要里程碑</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="参数规模演进">参数规模演进<a href="#参数规模演进" class="hash-link" aria-label="参数规模演进的直接链接" title="参数规模演进的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模型</th><th>年份</th><th>参数量</th><th>训练 Token</th></tr></thead><tbody><tr><td>GPT-1</td><td>2018</td><td>117M</td><td>~1B</td></tr><tr><td>GPT-2</td><td>2019</td><td>1.5B</td><td>~10B</td></tr><tr><td>GPT-3</td><td>2020</td><td>175B</td><td>300B</td></tr><tr><td>GPT-3.5</td><td>2022</td><td>~175B</td><td>未公开</td></tr><tr><td>GPT-4</td><td>2023</td><td>未公开（~1.76T，MoE）</td><td>未公开</td></tr><tr><td>GPT-4o</td><td>2024</td><td>未公开</td><td>未公开</td></tr><tr><td>o1/o3</td><td>2024</td><td>未公开</td><td>未公开</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="openai-商业化战略">OpenAI 商业化战略<a href="#openai-商业化战略" class="hash-link" aria-label="OpenAI 商业化战略的直接链接" title="OpenAI 商业化战略的直接链接" translate="no">​</a></h2>
+<p>GPT 系列的商业化路径体现了几个核心策略：</p>
+<ul>
+<li class=""><strong>API 优先</strong>：通过 OpenAI API 向开发者提供模型访问，建立生态护城河</li>
+<li class=""><strong>产品化</strong>：ChatGPT Plus 订阅（20美元/月）、ChatGPT Enterprise 企业版，差异化定价</li>
+<li class=""><strong>Microsoft 合作</strong>：微软 100 亿美元投资，Azure OpenAI Service 独家云部署，Office 365 Copilot 集成</li>
+<li class=""><strong>能力分层</strong>：免费版（GPT-3.5/4o mini）→ Plus（GPT-4o）→ Pro（o1 pro/o3）多层次变现</li>
+<li class=""><strong>API 降价</strong>：随能效提升持续降价（GPT-3.5 API 从 2 美元/M tokens 降至 0.5 美元），扩大市场覆盖</li>
+<li class=""><strong>生态系统</strong>：GPT Store（自定义 GPT 市场）、Function Calling（工具调用）、Assistants API 构建完整开发者生态</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-doc/docs/llm/principles/attention"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">注意力机制详解</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-doc/docs/llm/models/claude"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Claude 系列模型</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#gpt-12018生成式预训练的起点" class="table-of-contents__link toc-highlight">GPT-1（2018）：生成式预训练的起点</a></li><li><a href="#gpt-22019零样本能力的展现" class="table-of-contents__link toc-highlight">GPT-2（2019）：零样本能力的展现</a></li><li><a href="#gpt-32020少样本学习的突破" class="table-of-contents__link toc-highlight">GPT-3（2020）：少样本学习的突破</a></li><li><a href="#instructgpt2022rlhf-对齐" class="table-of-contents__link toc-highlight">InstructGPT（2022）：RLHF 对齐</a></li><li><a href="#chatgpt-与-gpt-352022-2023" class="table-of-contents__link toc-highlight">ChatGPT 与 GPT-3.5（2022-2023）</a></li><li><a href="#gpt-42023多模态与考试成绩" class="table-of-contents__link toc-highlight">GPT-4（2023）：多模态与考试成绩</a></li><li><a href="#gpt-4o2024实时多模态" class="table-of-contents__link toc-highlight">GPT-4o（2024）：实时多模态</a></li><li><a href="#o1--o3推理模型的新范式2024-2025" class="table-of-contents__link toc-highlight">o1 / o3：推理模型的新范式（2024-2025）</a></li><li><a href="#参数规模演进" class="table-of-contents__link toc-highlight">参数规模演进</a></li><li><a href="#openai-商业化战略" class="table-of-contents__link toc-highlight">OpenAI 商业化战略</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 AI Docs.</div></div></div></footer></div>
+</body>
+</html>
